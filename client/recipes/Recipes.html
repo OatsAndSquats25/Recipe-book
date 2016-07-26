@@ -4,11 +4,13 @@
     {{else}}
         <button class="new-recipe">New Recipe</button>
     {{/if}}
-    <section class="recipes">
+    <section class="recipes recipes-list-wrapper">
         {{#if Template.subscriptionsReady}}
-            {{#each recipes}}
-                {{> Recipe}}
-            {{/each}}
+            {{#transition in="fadeIn" out="fadeOut"}}
+                {{#each recipes}}
+                    {{> Recipe}}
+                {{/each}}
+            {{/transition}}
         {{else}}
             <p>Loading</p>
         {{/if}}
