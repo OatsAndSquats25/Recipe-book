@@ -6,11 +6,9 @@
     {{/if}}
     <section class="recipes recipes-list-wrapper">
         {{#if Template.subscriptionsReady}}
-            {{#transition in="fadeIn" out="fadeOut"}}
-                {{#each recipes}}
-                    {{> Recipe}}
-                {{/each}}
-            {{/transition}}
+            {{#each recipes}}
+                {{> Recipe}}
+            {{/each}}
         {{else}}
             <p>Loading</p>
         {{/if}}
